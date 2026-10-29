@@ -84,6 +84,13 @@ def draw():
     color('black')
     write('Taps: %d' % state['taps'], font=('Arial', 16, 'normal'))
 
+    # Tell the player when every tile has been uncovered.
+    if not any(hide):
+        up()
+        goto(-70, 0)
+        color('black')
+        write('You win!', font=('Arial', 30, 'normal'))
+
     update()
     ontimer(draw, 100)
 
