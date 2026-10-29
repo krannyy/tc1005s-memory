@@ -9,8 +9,12 @@ Exercises:
 5. Use letters instead of tiles.
 """
 
-from random import *
-from turtle import *
+from random import shuffle
+from turtle import (
+    addshape, begin_fill, clear, color, done, down, end_fill,
+    forward, goto, hideturtle, left, onscreenclick, ontimer,
+    setup, shape, stamp, tracer, up, update, write,
+)
 
 from freegames import path
 
@@ -25,7 +29,7 @@ def square(x, y):
     up()
     goto(x, y)
     down()
-    color('black', 'white')
+    color('black', 'lightblue')
     begin_fill()
     for count in range(4):
         forward(50)
@@ -74,9 +78,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x + 25, y + 10)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'), align='center')
 
     # Show the number of taps above the board.
     up()
